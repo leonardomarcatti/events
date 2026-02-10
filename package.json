@@ -1,0 +1,9 @@
+{
+   "private": true,
+   "scripts": {
+      "dev": "concurrently \"cd backend && pnpm run dev\" \"cd frontend && pnpm run dev\""
+   },
+   "devDependencies": {
+      "concurrently": "^8.2.2"
+   }
+}
