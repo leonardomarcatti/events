@@ -39,18 +39,33 @@
 
 <h2>📂 Estrutura Geral do Projeto</h2>
 
-project/<br />
-│<br />
-├── src/<br />
-│   ├── components/<br />
-│   ├── pages/<br />
-│   ├── routes/<br />
-│   ├── layouts/<br />
-│   └── App.jsx<br />
-│<br />
-├── public/<br />
-├── package.json<br />
-└── README.md<br />
+project/<br/>
+│<br/>
+├── backend/<br/>
+│   ├── data/<br/>
+│   ├── node_modules/<br/>
+│   ├── routes/<br/>
+│   ├── app.js<br/>
+│   ├── events.json<br/>
+│   ├── package.json<br/>
+│   ├── package-lock.json<br/>
+│   └── pnpm-lock.yaml<br/>
+│<br/>
+├── frontend/<br/>
+│   ├── node_modules/<br/>
+│   ├── public/<br/>
+│   ├── src/<br/>
+│   ├── .gitignore<br/>
+│   ├── eslint.config.js<br/>
+│   ├── index.html<br/>
+│   ├── package.json<br/>
+│   ├── pnpm-lock.yaml<br/>
+│   └── vite.config.js<br/>
+│<br/>
+├── .gitignore<br/>
+├── Dockerfile<br/>
+├── package.json<br/>
+└── README.md<br/>
 
 <h2>⚙️ Instalação e Execução</h2>
 <ol>
