@@ -6,6 +6,7 @@ import Home from '../pages/Home'
 import NewEvent from '../pages/NewEvent'
 import MainLayout from "../layouts/MainLayout";
 import EvetsLayout from '../layouts/EventsLayout'
+import Error from "../pages/Error";
 import { eventsLoader } from "../utils/eventsLoader";
 
 const routes = createBrowserRouter([
@@ -13,7 +14,7 @@ const routes = createBrowserRouter([
       path: '/', element: <MainLayout />, children: [
       {index: true, element: <Home />},
       {path: 'events', element: <EvetsLayout/>, children:[
-         {path: '', element: <Events/>, loader: eventsLoader},
+         {path: '', element: <Events/>, loader: eventsLoader, errorElement: <Error />},
          {path: 'new', element: <NewEvent/>},
          {path: ':id/edit', element: <EditEvent/>},
          {path: ':id', element: <EventDetails/>},
