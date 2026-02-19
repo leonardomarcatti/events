@@ -1,9 +1,8 @@
-import { useLoaderData } from "react-router"
+import { useRouteLoaderData } from "react-router"
 import EventItem from '../components/EventItem'
-import {} from '../utils/eventsLoader'
 
 const EventDetails = () => {
-   const {event} = useLoaderData()
+   const { event } = useRouteLoaderData('eventID')
    
    return <>
       <h1>Event Details Page</h1>

@@ -20,6 +20,7 @@
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
+  margin-top: 15px;
 }
 
 .actions button {
@@ -35,6 +36,7 @@
 .actions button[type='button'] {
   background-color: transparent;
   color: var(--color-gray-300);
+  border: 1px solid gray;
 }
 
 .actions button:hover {
