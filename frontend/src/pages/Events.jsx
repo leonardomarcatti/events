@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router';
 
 const Events = () => {
    const events = useLoaderData()
+   
    if (events.error) {
       <p>{events.message}</p>
    }

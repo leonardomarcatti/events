@@ -1,10 +1,13 @@
-import { useParams } from "react-router"
+import { useLoaderData } from "react-router"
+import EventItem from '../components/EventItem'
+import {} from '../utils/eventsLoader'
 
 const EventDetails = () => {
-   const {id} = useParams()
+   const {event} = useLoaderData()
+   
    return <>
       <h1>Event Details Page</h1>
-      <h3>{id}</h3>
+      <EventItem event={event} />
    </> 
 }
 
