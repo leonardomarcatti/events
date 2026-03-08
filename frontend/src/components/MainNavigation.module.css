@@ -8,10 +8,20 @@
 .list {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
-}  
+}
+
+.list > ul {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1rem;
+}
+
+
 
 .list a {
   text-decoration: none;

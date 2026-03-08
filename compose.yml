@@ -1,0 +1,22 @@
+services:
+  router_backend:
+    build: ./backend
+    container_name: router_backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+    command: pnpm run dev
+
+  router-frontend:
+    build: ./frontend
+    container_name: router-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - router_backend
+    environment:
+      - BACKEND_URL=http:/router_backend:3001
+    command: pnpm run dev

@@ -13,6 +13,12 @@ const eventsLoader = async () => {
    }
 }
 
+const deferEvents = () => {
+   return {
+      events: eventsLoader()
+   }
+}
+
 const eventDetailLoader = async ({request, params}) => {
    const {id} = params
    const response = await fetch(`http://192.168.1.160:3001/events/${id}`, {
@@ -32,4 +38,4 @@ const eventDetailLoader = async ({request, params}) => {
    
 }
 
-export { eventsLoader, eventDetailLoader }
+export { deferEvents, eventDetailLoader, eventsLoader }

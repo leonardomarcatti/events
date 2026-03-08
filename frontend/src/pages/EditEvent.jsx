@@ -3,7 +3,7 @@ import { useRouteLoaderData } from 'react-router'
 
 const EditEvent = () => {
    const {event} = useRouteLoaderData('eventID')
-   return <EventForm event={event}/>
+   return <EventForm event={event} method='put'/>
 }
 
 export default EditEvent
