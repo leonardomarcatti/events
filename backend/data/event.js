@@ -36,9 +36,11 @@ async function get(id) {
 }
 
 async function add(data) {
-  const storedData = await readData();
-  storedData.events.unshift({ ...data, id: generateId() });
-  await writeData(storedData);
+   const storedData = await readData();
+   const newEvent = { ...data, id: generateId() };
+   storedData.events.unshift(newEvent);
+   await writeData(storedData);
+   return newEvent;
 }
 
 async function replace(id, data) {

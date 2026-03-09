@@ -1,16 +1,19 @@
 import { redirect } from "react-router"
 
 const createEditEventAction = async ({request, params}) => {
+
    const data = await request.formData()
    const title = data.get('title')
    const image = data.get('image')
    const date = data.get('date')
    const description = data.get('description')
+
    const eventData = { title, image, date, description }
-   let url = 'http://192.168.1.160:3001/events/'
+   let url = '/api/events/'
+   console.log(request.method);
    
    if (request.method == 'PUT') {
-      url += params.id
+      url += `${params.id}`
    }
    
    const response = await fetch(url, {
@@ -22,16 +25,17 @@ const createEditEventAction = async ({request, params}) => {
       },
    })
 
-   if (response.status == 422) {
+   if (response.status == 422) {      
          const json = await response.json()
          return json
    }
+   
 
-   return redirect('..')
+   return redirect('/events')
 }
 
 const deleteEventAction = async ({params}) => {   
-   const response = await fetch(`http://192.168.1.160:3001/events/${params.id}`, {
+   const response = await fetch(`/api/events/${params.id}`, {
       method: 'delete',
       headers: {
          "Content-Type": "application/json",

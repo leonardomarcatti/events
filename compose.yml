@@ -18,5 +18,5 @@ services:
     depends_on:
       - router_backend
     environment:
-      - BACKEND_URL=http:/router_backend:3001
+      - BACKEND_URL=http://router_backend:3001
     command: pnpm run dev

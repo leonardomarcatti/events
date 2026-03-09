@@ -1,5 +1,5 @@
 const eventsLoader = async () => {
-   const response = await fetch('http://192.168.1.160:3001/events', {
+   const response = await fetch('/api/events', {
       method: 'get',
       headers: {
          "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const deferEvents = () => {
 
 const eventDetailLoader = async ({request, params}) => {
    const {id} = params
-   const response = await fetch(`http://192.168.1.160:3001/events/${id}`, {
+   const response = await fetch(`/api/events/${id}`, {
       method: 'get',
       headers: {
          "Content-Type": "application/json",

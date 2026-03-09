@@ -9,7 +9,7 @@ export default defineConfig({
       strictPort: true,
       proxy: {
          '/api': {
-            target: process.env.BACKEND_URL || 'http://localhost:3001',
+            target: 'http://router_backend:3001',
             changeOrigin: true,
             secure: false,
             rewrite: (path) => path.replace(/^\/api/, ''),
