@@ -1,16 +1,13 @@
 import { redirect } from "react-router"
 
 const createEditEventAction = async ({request, params}) => {
-
    const data = await request.formData()
    const title = data.get('title')
    const image = data.get('image')
    const date = data.get('date')
    const description = data.get('description')
-
    const eventData = { title, image, date, description }
    let url = '/api/events/'
-   console.log(request.method);
    
    if (request.method == 'PUT') {
       url += `${params.id}`
@@ -29,7 +26,6 @@ const createEditEventAction = async ({request, params}) => {
          const json = await response.json()
          return json
    }
-   
 
    return redirect('/events')
 }
